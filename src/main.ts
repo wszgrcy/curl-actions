@@ -6,10 +6,10 @@ export async function run(): Promise<void> {
     const body = core.getInput('body')
     const method = core.getInput('method')
     const url = core.getInput('url')
-    core.info(headers.join('\n'))
-    core.info(body)
-    core.info(method)
-    core.info(url)
+    // core.info(headers.join('\n'))
+    // core.info(body)
+    // core.info(method)
+    // core.info(url)
     let headersList = headers.reduce(
       (obj, item) => {
         let index = item.indexOf(':')
@@ -20,9 +20,9 @@ export async function run(): Promise<void> {
       },
       {} as Record<string, any>
     )
-    core.info(JSON.stringify(headersList))
-    let bodyContent = JSON.stringify(body)
-    core.info(bodyContent)
+    // core.info(JSON.stringify(headersList))
+    let bodyContent = body
+    // core.info(bodyContent)
     let response = await fetch(url, {
       method: method,
       body: bodyContent,
