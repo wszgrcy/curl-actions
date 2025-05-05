@@ -1,4 +1,4 @@
-name: The name of your action here
+name: request
 description: Provide a description here
 author: Your name or organization here
 
@@ -9,15 +9,23 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  headers:
+    description: 请求头
+    required: false
+  body:
+    description: 请求体
+    required: false
+  method:
+    description: POST
+    required: false
+    default: POST
+  url:
+    description: url
     required: true
-    default: '1000'
-
 # Define your outputs here.
-outputs:
-  time:
-    description: Your output description here
+# outputs:
+#   time:
+#     description: Your output description here
 
 runs:
   using: node20
